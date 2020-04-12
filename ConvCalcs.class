@@ -1,0 +1,70 @@
+
+package conversions;
+
+
+
+/**
+ *
+ * @author Reese T Ebling
+ */
+public class ConvCalcs {
+    
+    public static double mitoKm(double mi) throws Exception {
+        double km;
+        
+        if (mi < 0) {
+            throw new Exception("Miles cannot be negative.");
+        }
+        km = mi * 1.60934;
+        return km;
+    }
+    public static double ftoC(double f) throws Exception {
+        double c;
+        
+        c = ((f - 32)/0.55555);
+        
+        degreesK(c);
+        
+        return c;
+    }
+    
+    public static double degreesK(double c) throws Exception {
+        double k;
+        k = c + 273.15;
+        if (k < 0) {
+            throw new Exception("Temp cannot be converted: below absolute zero.");
+        }
+        return k;
+    }
+    
+    public static double oztoGr(double oz) throws Exception {
+        double gr;
+        if (oz < 0) {
+            throw new Exception("Ounces cannot be negative.");
+        }
+        gr = (oz * 28.3495);
+        return gr;
+    }
+    
+    public static double ltoG(double l) throws Exception {
+        double g;
+        if (l < 0) {
+            throw new Exception("Liters cannot be negative.");
+        }
+        g = (l * .26417);
+        return g;
+    }
+    public static double mtoFt(double m) throws Exception {
+        double ft;
+        if (m < 0) {
+            throw new Exception("Meters cannot be negative.");
+        }
+        ft = (m * m * 3.2808);
+        return ft;
+    }
+    public static double ctoF(double c) {
+        double f;
+        f = ((1.8 * c) +  32);
+        return f;
+    }
+}
